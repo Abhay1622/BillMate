@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ color, themeChange }) => {
   const isColor = color === "light";
@@ -10,6 +11,7 @@ const Navbar = ({ color, themeChange }) => {
       }`}
     >
       <div>
+        <Link to={'/'}>
         <span
           className={`text-3xl ${
             isColor ? "text-black" : "text-white"
@@ -17,6 +19,7 @@ const Navbar = ({ color, themeChange }) => {
         >
           BillMate
         </span>
+        </Link>
       </div>
 
       <div className="flex gap-2">
@@ -60,9 +63,11 @@ const Navbar = ({ color, themeChange }) => {
           </svg>
         </button>
 
+        <Link to={'/generate'}>
         <button className="border-2 px-3 rounded-xl py-1 bg-blue-600 cursor-pointer">
           <span className="text-white">Generate Invoice</span>
         </button>
+        </Link>
       </div>
     </nav>
   );
